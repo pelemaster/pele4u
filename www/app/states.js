@@ -240,6 +240,30 @@ angular.module('pele.states', [])
       },
       src: ["app/apps/docApprove/INI/iniDetailsCtrl.js"]
     }, {
+      state: 'app.travel_list',
+      url: "/travel_list/:AppId/:FormType/:Pin",
+      views: {
+        'menuContent': {
+          templateUrl: function() {
+            return "app/apps/docApprove/TRAVEL/travelList.html";
+          },
+          controller: 'travelListCtrl'
+        }
+      },
+      src: ["app/apps/docApprove/TRAVEL/travelListCtrl.js"]
+    }, {
+      state: 'app.travel_details',
+      url: "/travel_details/:formType/:AppId/:docId/:docInitId",
+      views: {
+        'menuContent': {
+          templateUrl: function() {
+            return "app/apps/docApprove/TRAVEL/travelDetails.html";
+          },
+          controller: 'travelDetailsCtrl'
+        }
+      },
+      src: ["app/apps/docApprove/TRAVEL/travelDetailsCtrl.js"]
+    }, {
       state: 'app.doc_10002',
       url: "/doc_10002/:AppId/:DocId/:DocInitId",
       views: {

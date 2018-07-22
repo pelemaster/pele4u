@@ -1,5 +1,5 @@
 /*********************/
-const env = "QA";
+const env = "DV";
 /********************/
 
 const EnvCodes = {
@@ -323,6 +323,9 @@ angular.module('pele.config', [])
       },
       "POWFTASK": {
         state: "app.chat_list"
+      },
+      "TRAVEL": {
+        state: "app.travel_list"
       },
     },
     ACTION_HISTORY: {
