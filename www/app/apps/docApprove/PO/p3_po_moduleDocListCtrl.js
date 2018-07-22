@@ -5,7 +5,7 @@ angular.module('pele')
   //====================================================================================
   //==                                  PAGE_3
   //====================================================================================
-  .controller('p3_po_moduleDocListCtrl', function($scope, $stateParams, $ionicLoading, $state, PelApi, $sessionStorage) {
+  .controller('p3_po_moduleDocListCtrl', function($scope, $stateParams, ApiService, $ionicLoading, $state, PelApi, $sessionStorage) {
 
     //---------------------------------
     //--       goHome
