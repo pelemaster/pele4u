@@ -33,7 +33,7 @@ angular.module('pele')
           var apiData = PelApi.checkApiResponse(data);
           if (apiData.error) return false;
           $scope.docDetails = PelApi.getJsonString(apiData.Result, "JSON[0]", true);
-          $scope.title = "טופס נסיעות לחול";
+          $scope.title = "נסיעות לחול";
           $scope.docDetails.attachments = $scope.docDetails.ATTACHMENT_FILES || [];
           PelApi.extendActionHistory($scope.docDetails);
           $scope.buttonsArr = $scope.docDetails.BUTTONS || [];

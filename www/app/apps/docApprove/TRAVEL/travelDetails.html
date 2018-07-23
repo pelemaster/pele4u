@@ -93,7 +93,7 @@
                             <li class="item item-info no-border">
                                 <div class="item item-divider item-icon-right item-icon-left" ng-init="lines_elm=true" ng-click="lines_elm=!lines_elm">
                                     <i class="icon pel_icon icon-sm" ng-class="lines_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
-                                    <h2 class="text-right pele_rtl">פרטי נסיעה ומלון</h2>
+                                    <h2 class="text-right pele_rtl">פרטי נסיעה</h2>
                                     <i class="icon pel_icon icon-md ion-plane"></i>
                                 </div>
                                 <div class="item-section" ng-show="docDetails && !docDetails.FLIGHT_ROWS.length">
@@ -121,12 +121,12 @@
                             </li>
 
                             <li class="item item-info no-border">
-                                <div class="item item-divider item-icon-right item-icon-left" ng-init="info_elm=true" ng-click="info_elm=!info_elm">
-                                    <i class="icon pel_icon icon-sm" ng-class="info_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
+                                <div class="item item-divider item-icon-right item-icon-left" ng-init="price_elm=true" ng-click="price_elm=!price_elm">
+                                    <i class="icon pel_icon icon-sm" ng-class="price_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
                                     <i class="icon pel_icon icon-md ion-cash"></i>
-                                    <h2 class="text-right pele_rtl">עלויות טיסה</h2>
+                                    <h2 class="text-right pele_rtl">עלויות נסיעה</h2>
                                 </div>
-                                <div class="item-section" ng-show="info_elm">
+                                <div class="item-section" ng-show="price_elm">
                                     <table class="pele_rtl text-right">
                                         <tbody>
                                             <tr>
@@ -135,23 +135,23 @@
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות טיסות: </td>
-                                                <td class="info">{{docDetails.COST_FLIGHT}}</td>
+                                                <td class="info">{{docDetails.COST_FLIGHT}} <span>&#36;</span></td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות מלונות: </td>
-                                                <td class="info">{{docDetails.HOTEL_COST}}</td>
+                                                <td class="info">{{docDetails.HOTEL_COST}} <span>&#36;</span></td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות השכרת רכב: </td>
-                                                <td class="info">{{docDetails.CAR_COST_RENTAL}}</td>
+                                                <td class="info">{{docDetails.CAR_COST_RENTAL}} <span>&#36;</span></td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות אשל: </td>
-                                                <td class="info">{{docDetails.SUM_TRAVELING_EXPEN}}</td>
+                                                <td class="info">{{docDetails.SUM_TRAVELING_EXPEN}} <span>&#36;</span></td>
                                             </tr>
                                             <tr>
                                                 <td class="label">סך כולל של הנסיעה: </td>
-                                                <td class="info">{{docDetails.TRIP_COST_ALL}} (ערך מחושב) </td>
+                                                <td class="info">{{docDetails.TRIP_COST_ALL}} <span>&#36;</span> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -159,12 +159,12 @@
                             </li>
 
                             <li class="item item-info no-border">
-                                <div class="item item-divider item-icon-right item-icon-left" ng-init="info_elm=true" ng-click="info_elm=!info_elm">
-                                    <i class="icon pel_icon icon-sm" ng-class="info_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
+                                <div class="item item-divider item-icon-right item-icon-left" ng-init="comment_elm=true" ng-click="comment_elm=!comment_elm">
+                                    <i class="icon pel_icon icon-sm" ng-class="comment_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
                                     <i class="icon pel_icon icon-md ion-compose"></i>
                                     <h2 class="text-right pele_rtl">הערות</h2>
                                 </div>
-                                <div class="item-section" ng-show="info_elm">
+                                <div class="item-section" ng-show="comment_elm">
                                     <table class="pele_rtl text-right">
                                         <tbody>
                                             <tr>
