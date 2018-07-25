@@ -82,7 +82,7 @@
                                                 <td class="info">{{docDetails.TRIP_FINANCING}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">מטרת הנסיעה : </td>
+                                                <td class="label">מטרת נסיעה : </td>
                                                 <td class="info">{{docDetails.TRIP_PURPOSE}}</td>
                                             </tr>
                                         </tbody>
@@ -116,6 +116,14 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="label">סך ימים בחו״ל: </td>
+                                                <td class="info">{{docDetails.ABROAD_DAYS}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
                             </li>
@@ -123,38 +131,46 @@
                             <li class="item item-info no-border">
                                 <div class="item item-divider item-icon-right item-icon-left" ng-init="price_elm=true" ng-click="price_elm=!price_elm">
                                     <i class="icon pel_icon icon-sm" ng-class="price_elm ? 'ion-chevron-down' :'ion-chevron-left'"></i>
-                                    <i class="icon pel_icon icon-md ion-cash"></i>
-                                    <h2 class="text-right pele_rtl">עלויות נסיעה</h2>
+                                    <i class="icon pel_icon icon-md" style="padding-right: 10px">$</i>
+                                    <h2 class="text-right pele_rtl">עלויות נסיעה <strong>למילוי הרכש בלבד</strong></h2>
                                 </div>
                                 <div class="item-section" ng-show="price_elm">
                                     <table class="pele_rtl text-right">
                                         <tbody>
                                             <tr>
-                                                <td class="label">סך ימים בחו״ל: </td>
-                                                <td class="info">{{docDetails.ABROAD_DAYS}}</td>
-                                            </tr>
-                                            <tr>
                                                 <td class="label">עלות טיסות: </td>
-                                                <td class="info">{{docDetails.COST_FLIGHT}} <span>&#36;</span></td>
+                                                <td class="info">{{docDetails.COST_FLIGHT}}
+                                                    <span>&#36;</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות מלונות: </td>
-                                                <td class="info">{{docDetails.HOTEL_COST}} <span>&#36;</span></td>
+                                                <td class="info">{{docDetails.HOTEL_COST}}
+                                                    <span>&#36;</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות השכרת רכב: </td>
-                                                <td class="info">{{docDetails.CAR_COST_RENTAL}} <span>&#36;</span></td>
+                                                <td class="info">{{docDetails.CAR_COST_RENTAL}}
+                                                    <span>&#36;</span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="label">עלות אשל: </td>
-                                                <td class="info">{{docDetails.SUM_TRAVELING_EXPEN}} <span>&#36;</span></td>
+                                                <td class="info">{{docDetails.SUM_TRAVELING_EXPEN}}
+                                                    <span>&#36;</span>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td><br></td>
+                                                <td>
+                                                    <br>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="label" style="font-weight: bold">סך כולל של הנסיעה: </td>
-                                                <td class="info" style="font-weight: bold">{{docDetails.TRIP_COST_ALL}} <span>&#36;</span> </td>
+                                                <td class="info" style="font-weight: bold">{{docDetails.TRIP_COST_ALL}}
+                                                    <span>&#36;</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
