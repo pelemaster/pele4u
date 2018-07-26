@@ -49,13 +49,12 @@ app.controller('P1_appsListCtrl',
     //$scope.tilesEnabled = true;
     $scope.sort = function(items) {
 
-      /*     items[0].Sorter = "1@cls1 dsds ddssd";
+      /*  items[0].Sorter = "1@cls1 dsds ddssd";
       items[1].Sorter = "2@cls3";
       items[2].Sorter = "4.1@cls3";
       items[2].Path = null;
       items[3].Sorter = "4.1@wide";
       //items[3].Path = null;
-
       items[4].Sorter = "4";
       items[4].Path = null;
       */
@@ -64,10 +63,9 @@ app.controller('P1_appsListCtrl',
       var sortedMenu = _.sortBy(items, function(i) {
         idx++;
         i.menuLocation = i.Location || "side";
-        i.side = true || i.menuLocation.match("side|s") ? true : false;
-        i.menu2 = true || i.menuLocation.match("menu2|m2") ? true : false;
-        i.menu3 = true || i.menuLocation.match("menu2|m3") ? true : false;
-
+        i.side = i.menuLocation.match("side|s") ? true : false;
+        i.menu2 = i.menuLocation.match("menu2|m2") ? true : false;
+        i.menu3 = i.menuLocation.match("menu3|m3") ? true : false;
         i.newSorter = (i.Sorter || ("99" + idx).toString()).replace(re, "");
         i.level = (i.newSorter.match(/\./g) || []).length;
         i.parent = "mid_" + (i.newSorter.replace(/\.?\w+$/, "") || "0");
