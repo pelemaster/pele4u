@@ -64,8 +64,8 @@ app.controller('P1_appsListCtrl',
         idx++;
         i.menuLocation = i.Location || "side";
         i.side = i.menuLocation.match("side|s") ? true : false;
+        i.menu1 = i.menuLocation.match("menu1|m1") ? true : false;
         i.menu2 = i.menuLocation.match("menu2|m2") ? true : false;
-        i.menu3 = i.menuLocation.match("menu3|m3") ? true : false;
         i.newSorter = (i.Sorter || ("99" + idx).toString()).replace(re, "");
         i.level = (i.newSorter.match(/\./g) || []).length;
         i.parent = "mid_" + (i.newSorter.replace(/\.?\w+$/, "") || "0");
