@@ -87,6 +87,7 @@ angular.module('pele.factories', ['ngStorage', 'LocalStorageModule', 'ngCordova'
         return true;
       },
       init: function() {
+        console.log("device ready - init")
         this.global.set('debugFlag', appSettings.debug, true)
         this.cordovaNetwork = {
           getNetwork: function() {
@@ -1373,7 +1374,7 @@ angular.module('pele.factories', ['ngStorage', 'LocalStorageModule', 'ngCordova'
             action.short_text = 'ממתין';
             action.right_icon = 'ion-clock navy';
           }
-          if (action.ACTION_CODE === "NOTE" && action.NOTE){
+          if (action.ACTION_CODE === "NOTE" && action.NOTE) {
             action.left_icon = "";
             action.right_icon = 'ion-help-circled';
           }
