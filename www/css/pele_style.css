@@ -996,10 +996,11 @@ body {background-color: #0160a0 !important;}
    line-height:40px;
  }
 
-.platform-ios .menu2 {margin-top:255px !important}
-.menu2 {margin-top:280px !important}
 
+.menu2 {margin-top:280px}
+.platform-ios .menu2 {margin-top:255px}
 @supports (display:grid) {
+  .platform-ios .menu2 {margin-top:255px}
    .grid-layout {
       display: grid;
       margin:0px;
