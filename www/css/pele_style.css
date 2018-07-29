@@ -996,7 +996,7 @@ body {background-color: #0160a0 !important;}
 .scroll-content.menu2 {margin-top:300px }
 .platform-android .scroll-content.menu2 {margin-top:300px !important;}
 /* becouse we dont have statusBar */
-.platform-ios .scroll-content.menu2 {margin-top:260 !important}
+.platform-ios .scroll-content.menu2 {margin-top:220 !important}
 
 @supports (display:grid) {
    .grid-layout {
