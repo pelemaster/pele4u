@@ -152,6 +152,7 @@ app.controller('P1_appsListCtrl',
         //$scope.setMSISDN(appSettings.config.MSISDN_VALUE);
 
         var pinCodeStatus = PelApi.GetPinCodeStatus(data, "getMenu");
+        PelApi.lagger.info("GetUserMenu -> pinCodeStatus:", pinCodeStatus)
         if ("Valid" === pinCodeStatus) {
 
           appSettings.config.token = data.token;
@@ -322,6 +323,9 @@ app.controller('P1_appsListCtrl',
             $sessionStorage.user = appSettings.config.GetUserMenu.user;
             $sessionStorage.userName = appSettings.config.GetUserMenu.userName;
             $scope.feeds_categories = appSettings.config.GetUserMenu;
+
+            $scope.visibleParent = "mid_0";
+            $rootScope.menuItems = $sessionStorage.menuItems;
             $ionicLoading.hide();
             $scope.$broadcast('scroll.refreshComplete');
           }
