@@ -993,9 +993,10 @@ body {background-color: #0160a0 !important;}
    line-height:40px;
  }
 
-.platform-android .menu2 {margin-top:300px !important;}
+.scroll-content.menu2 {margin-top:300px }
+.platform-android .scroll-content.menu2 {margin-top:300px !important;}
 /* becouse we dont have statusBar */
-.platform-ios .menu2 {margin-top:260 !important}
+.platform-ios .scroll-content.menu2 {margin-top:260 !important}
 
 @supports (display:grid) {
    .grid-layout {
