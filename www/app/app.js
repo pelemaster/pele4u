@@ -106,7 +106,7 @@ angular.module('pele', [
           if (cordova.platformId == 'android') {
             StatusBar.backgroundColorByHexString("#1d3f84");
           }
-          if (window.iphonex) {
+          if (cordova.platformId != 'android') {
             StatusBar.hide();
           }
 
