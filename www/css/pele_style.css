@@ -965,7 +965,6 @@ body {background-color: #0160a0 !important;}
  .grid-layout {
    margin:0px 2px;
  }
-
  .grid-item {
    text-align:center;
    min-height:97px;
@@ -993,10 +992,11 @@ body {background-color: #0160a0 !important;}
  .newlook .plasma .profile-caption {
    line-height:40px;
  }
-.menu2 {margin-top:300px !important}
 
+.platform-android .menu2 {margin-top:300px !important;}
 /* becouse we dont have statusBar */
 .platform-ios .menu2 {margin-top:260 !important}
+
 @supports (display:grid) {
    .grid-layout {
       display: grid;
