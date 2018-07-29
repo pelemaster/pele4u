@@ -987,20 +987,17 @@ body {background-color: #0160a0 !important;}
       border:0px solid  #ccc;
     }
  }
-
  .newlook  .has-header {
-   top:20px
+   top:0px
  }
-
  .newlook .plasma .profile-caption {
    line-height:40px;
  }
+.menu2 {margin-top:300px !important}
 
-
-.menu2 {margin-top:280px}
-.platform-ios .menu2 {margin-top:255px}
+/* becouse we dont have statusBar */
+.platform-ios .menu2 {margin-top:260 !important}
 @supports (display:grid) {
-  .platform-ios .menu2 {margin-top:255px}
    .grid-layout {
       display: grid;
       margin:0px;
@@ -1023,10 +1020,6 @@ body {background-color: #0160a0 !important;}
         border:0px solid  #ccc;
       }
    }
-   .newlook  .has-header {
-       top:20px;
-   }
-
 }
 
 .span-2 {
