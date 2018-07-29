@@ -183,8 +183,9 @@ app.controller('P1_appsListCtrl',
           //--------------------------------------
           $sessionStorage.token = appSettings.config.token;
           $sessionStorage.user = appSettings.config.GetUserMenu.user;
-          var stoterId = _.get($localStorage.profile, "id")
-          if ($sessionStorage.user && !(stoterId || stoterId == $sessionStorage.user)) {
+          var UserId = _.get($localStorage.profile, "id")
+          //  if ($sessionStorage.user && !(UserId || UserId == $sessionStorage.user)) {
+          if (!UserId || (UserId && UserId != $sessionStorage.user)) {
             ApiGateway.get("public/profile", {
               id: $sessionStorage.user
             }).then(function(res) {
