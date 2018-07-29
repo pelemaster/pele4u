@@ -956,15 +956,16 @@ body {background-color: #0160a0 !important;}
 /*    padding-top: constant(safe-area-inset-top); /* Status bar height on iOS 11.0 */
 /*    padding-top: env(safe-area-inset-top); /* Status bar height on iOS 11+ */
 /*}*/
-.platform-ios .bar .app-top-bar.bar-header {
+.__platform-ios .bar .app-top-bar.bar-header {
     height: calc( 10px+constant(safe-area-inset-top));
     margin-top: 10px;
 }
+.__platform-ios  .scroll-content {padding-top:10px}
 
-.platform-ios  .scroll-content {padding-top:10px}
  .grid-layout {
    margin:0px 2px;
  }
+
  .grid-item {
    text-align:center;
    min-height:97px;
@@ -994,6 +995,8 @@ body {background-color: #0160a0 !important;}
  .newlook .plasma .profile-caption {
    line-height:40px;
  }
+.menu2 {margin-top:280px !important}
+
 @supports (display:grid) {
    .grid-layout {
       display: grid;
@@ -1041,8 +1044,6 @@ grid-row-end: span 1;}
 .menu1 a .caption {padding:2px 4px}
 .menu1 .links-image {height:50px}
 
-.menu2 {margin-top:275px !important}
-
 .grid-item-image {
    height:38px;width:38px;
    display: block;
@@ -1078,7 +1079,6 @@ grid-row-end: span 1;}
     border-radius: 50%;
 }
 
-.--grid-item.menu1 {background:rgba(255,255,255) }
 
 .menu1 a {display:inline-block; min-width: 100px; border:1px solid rgba(255, 255, 255, 0.2);border-radius:4px;margin:5px;padding-top:10px;background: rgba(255,255,255,0.2)}
 .menu1 a .caption {background: rgba(255, 255, 255, 0.2);padding:2px 4px;color:#034180;font-size:12px}
