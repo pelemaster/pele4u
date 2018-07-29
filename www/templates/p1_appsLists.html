@@ -1,43 +1,53 @@
 <ion-view class="feeds-categories-view newlook newlook4 {{deviceModel}}" cache-view="false" hide-back-button="true" ng-class="{'loading':!menuItems.length,'iphonex':iphonex}">
-  <div class="row top-menu-buttons">
-    <div class="col pele4u-logo  text-left">
-      <img src="img/new_icons/transparent-pele4u.png" />
-    </div>
+  <table>
+    <tr>
+      <td>
+        <div class="row top-menu-buttons">
+          <div class="col pele4u-logo  text-left">
+            <img src="img/new_icons/transparent-pele4u.png" />
+          </div>
 
-    <div class="ham white col text-right">
-      <a menu-toggle="right"><img  style="margin-top:5px" src="img/new_icons/hamburger.png"></a>
-    </div>
-  </div>
-  <div class="grid-layout menu-plasma" ng-show="menuItems.length">
-    <div class="grid-item plasma">
-      <div ng-show="profile.id" class="text-center profile">
-        <img ng-show="profile.pic" ng-src="data:image/JPEG;base64,{{profile.pic}}" class="image-cropper">
-        <img ng-show="!profile.pic" ng-src="img/new_icons/blue_avatar.png" class="image-cropper">
-      </div>
-      <div class="profile-caption">
-        {{wellcome}}, {{profile.firstName}}
-      </div>
-    </div>
-    <div class="grid-item menu1">
-      <div class="pele_rtl text-right useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
-      <ion-scroll has-bouncing="true" scrollX="false" direction="x" scrollY="false" class="tsb-hscroll">
-        <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
+          <div class="ham white col text-right">
+            <a menu-toggle="right"><img  style="margin-top:5px" src="img/new_icons/hamburger.png"></a>
+          </div>
+        </div>
+        <div class="grid-layout menu-plasma" ng-show="menuItems.length">
+          <div class="grid-item plasma">
+            <div ng-show="profile.id" class="text-center profile">
+              <img ng-show="profile.pic" ng-src="data:image/JPEG;base64,{{profile.pic}}" class="image-cropper">
+              <img ng-show="!profile.pic" ng-src="img/new_icons/blue_avatar.png" class="image-cropper">
+            </div>
+            <div class="profile-caption">
+              {{wellcome}}, {{profile.firstName}}
+            </div>
+          </div>
+          <div class="grid-item menu1">
+            <div class="pele_rtl text-right useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
+            <ion-scroll has-bouncing="true" scrollX="false" direction="x" scrollY="false" class="tsb-hscroll">
+              <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
           <img class="links-image" ng-src="{{app.Image}}" />
           <div class="caption">{{app.DisplayName}}</div>
         </a>
-      </ion-scroll>
-    </div>
-  </div>
-  <ion-content class="menu2" ng-show="menuItems.length">
-    <ion-refresher pulling-text="משוך לרענון... " on-refresh="doRefresh() ">
-    </ion-refresher>
-    <div class="grid-layout" ng-show="menuItems">
-      <div ng-click="forwardToApp(app)" class="grid-item" ng-repeat="app in menuItems | filter: { menu2: true }">
-        <i class="circle"><img class="grid-item-image" ng-src="{{app.Image}}" /></i>
-        <div class="caption">{{app.DisplayName}}</div>
-      </div>
-    </div>
-  </ion-content>
+            </ion-scroll>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ion-scroll class="menu2" scrollX="false" direction="y" ng-show="menuItems.length">
+          <ion-refresher pulling-text="משוך לרענון... " on-refresh="doRefresh() ">
+          </ion-refresher>
+          <div class="grid-layout" ng-show="menuItems">
+            <div ng-click="forwardToApp(app)" class="grid-item" ng-repeat="app in menuItems | filter: { menu2: true }">
+              <i class="circle"><img class="grid-item-image" ng-src="{{app.Image}}" /></i>
+              <div class="caption">{{app.DisplayName}}</div>
+            </div>
+          </div>
+        </ion-scroll>
+    </tr>
+    </td>
+  </table>
   <!--ion-nav-title>
     <div class="bar bar-header bar-positive ">
       <h1 class="title ">תפריט יישומים</h1>
