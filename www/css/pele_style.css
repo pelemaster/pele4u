@@ -962,28 +962,64 @@ body {background-color: #0160a0 !important;}
 }
 
 .platform-ios  .scroll-content {padding-top:10px}
+ .grid-layout {
+   margin:0px 2px;
+ }
+ .grid-item {
+   text-align:center;
+   min-height:97px;
+ }
 
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 50%));
-    grid-gap: 0px;
-    grid-auto-rows: minmax(97px, auto);
-    grid-auto-flow: row;
-    padding: 5px;
-    direction:rtl;
-
-}
-.grid-item {
-    padding: 0px;
+ .menu2 .grid-item {
+    min-width:50%;
+    display: inline-block;
     font-size: 14px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     font-weight: bold;
     text-transform: uppercase;
     text-align:center;
-    border:0px solid  #ccc;
+    border:1px solid  #ccc;
     border-radius: 0px;
     &:nth-child(odd) {
       border:0px solid  #ccc;
     }
+ }
+
+ .newlook  .has-header {
+   top:20px
+ }
+
+ .newlook .plasma .profile-caption {
+   line-height:40px;
+ }
+@supports (display:grid) {
+   .grid-layout {
+      display: grid;
+      margin:0px;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      grid-gap: 0px;
+      grid-auto-rows: minmax(97px, auto);
+      grid-auto-flow: row;
+      padding: 5px;
+      direction:rtl;
+   }
+    .menu2 .grid-item {
+      padding: 0px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align:center;
+      border:1px solid  #ccc;
+      border-radius: 0px;
+      &:nth-child(odd) {
+        border:0px solid  #ccc;
+      }
+   }
+   .newlook  .has-header {
+       top:20px;
+   }
 
 }
 
@@ -1005,8 +1041,8 @@ grid-row-end: span 1;}
 .menu1 a .caption {padding:2px 4px}
 .menu1 .links-image {height:50px}
 
-.menu2 {margin-top:255px !important}
-.menu2 .grid-item { border-width:0px;padding:0;  border-width: 1px;}
+.menu2 {margin-top:275px !important}
+
 .grid-item-image {
    height:38px;width:38px;
    display: block;
@@ -1054,7 +1090,7 @@ grid-row-end: span 1;}
 .newlook .tsb-hscroll.scroll-view {margin:0}
 .newlook .menu2 .caption {font-weight: 400}
 .newlook .plasma .profile-caption {
-color:white
+  color:white;
 }
 
 .newlook .menu-plasma .caption.useful { display: flex; padding-right:5px}
