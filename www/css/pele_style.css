@@ -995,6 +995,8 @@ body {background-color: #0160a0 !important;}
  .newlook .plasma .profile-caption {
    line-height:40px;
  }
+
+.platform-ios .menu2 {margin-top:255px !important}
 .menu2 {margin-top:280px !important}
 
 @supports (display:grid) {
