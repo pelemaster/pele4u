@@ -994,8 +994,9 @@ body {background-color: #0160a0 !important;}
 .newlook .menu2 {top:280px !important }
 .platform-android .newlook   .menu2 {top:280px !important;}
 /* becouse we dont have statusBar */
-.platform-ios .newlook .menu2 {top:272px !important}
-.newlook.iphonex  .menu2 {top:280px !important;}
+.platform-ios .newlook .menu2 {top:276px !important}
+.platform-ios .newlook.iphonex  .menu2 {top:280px !important;}
+
 @supports (display:grid) {
    .grid-layout {
       display: grid;
@@ -1066,8 +1067,7 @@ grid-row-end: span 1;}
 .plasma .profile {margin-top:40px}
 .plasma .profile-caption {font-size:16px}
 .plasma .profile img.image-cropper {
-    width: auto;
-    height: 100px;
+    width: 95px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;

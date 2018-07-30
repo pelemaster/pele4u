@@ -18,20 +18,22 @@
       </div>
     </div>
     <div class="menu1">
-      <div class="pele_rtl text-right useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
-      <ion-scroll direction="x" class="tsb-hscroll" has-bouncing="false">
-        <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
+      <div class="text-right pele_rtl useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
+      <ion-scroll direction="x" class="tsb-hscroll" has-bouncing="false" delegate-handle="menu1-handle">
+        <div class="">
+          <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
           <img class="links-image" ng-src="{{app.Image}}" />
           <div class="caption">{{app.DisplayName}}</div>
         </a>
-        <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
+          <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
           <img class="links-image" ng-src="{{app.Image}}" />
           <div class="caption">{{app.DisplayName}}</div>
         </a>
-        <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
+          <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
           <img class="links-image" ng-src="{{app.Image}}" />
           <div class="caption">{{app.DisplayName}}</div>
         </a>
+        </div>
       </ion-scroll>
     </div>
   </div>
