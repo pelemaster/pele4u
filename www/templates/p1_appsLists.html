@@ -7,17 +7,17 @@
       <a menu-toggle="right"><img  style="margin-top:5px" src="img/new_icons/hamburger.png"></a>
     </div>
   </div>
-  <div class="grid-layout menu-plasma" ng-show="menuItems.length">
-    <div class="grid-item plasma">
+  <div id="menu-plasma" class="menu-plasma" ng-show="menuItems.length">
+    <div class="plasma">
       <div class="text-center profile">
         <img ng-show="profile.pic" ng-src="data:image/JPEG;base64,{{profile.pic}}" class="image-cropper">
         <img ng-show="!profile.pic" ng-src="img/new_icons/blue_avatar.png" class="image-cropper">
       </div>
-      <div class="profile-caption">
+      <div class="profile-caption text-center">
         {{wellcome}}, {{profile.firstName}}
       </div>
     </div>
-    <div class="grid-item menu1">
+    <div class="menu1">
       <div class="pele_rtl text-right useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
       <ion-scroll direction="x" class="tsb-hscroll" has-bouncing>
         <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
