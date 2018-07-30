@@ -994,8 +994,8 @@ body {background-color: #0160a0 !important;}
 .newlook .menu2 {top:280px !important }
 .platform-android .newlook   .menu2 {top:280px !important;}
 /* becouse we dont have statusBar */
-.platform-ios .newlook .menu2 {top:280px !important}
-
+.platform-ios .newlook .menu2 {top:260px !important}
+.newlook.iphonex  .menu2 {top:280px !important;}
 @supports (display:grid) {
    .grid-layout {
       display: grid;

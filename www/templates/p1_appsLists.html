@@ -19,7 +19,7 @@
     </div>
     <div class="menu1">
       <div class="pele_rtl text-right useful caption ">קישורים שימושיים <img style="height:20px;margin-right:7px" src="img/new_icons/white-h-scroll.png"></div>
-      <ion-scroll direction="x" class="tsb-hscroll" has-bouncing>
+      <ion-scroll direction="x" class="tsb-hscroll" has-bouncing="false">
         <a ng-click="forwardToApp(app)" ng-repeat="app in menuItems  | filter: { menu1: true }">
           <img class="links-image" ng-src="{{app.Image}}" />
           <div class="caption">{{app.DisplayName}}</div>
@@ -35,7 +35,7 @@
       </ion-scroll>
     </div>
   </div>
-  <ion-content class="menu2" ng-show="menuItems.length" class="no-header no-footer">
+  <ion-content class="menu2" ng-show="menuItems.length" class="no-header no-footer" has-bouncing="false">
     <ion-refresher pulling-text="משוך לרענון... " on-refresh="doRefresh() ">
     </ion-refresher>
     <div class="grid-layout" ng-show="menuItems">
