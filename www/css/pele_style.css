@@ -971,7 +971,7 @@ body {background-color: #0160a0 !important;}
  }
 
  .menu2 .grid-item {
-    min-width:50%;
+    width:50%;
     display: inline-block;
     font-size: 14px;
     box-sizing: border-box;
@@ -980,6 +980,7 @@ body {background-color: #0160a0 !important;}
     font-weight: bold;
     text-transform: uppercase;
     text-align:center;
+    float: right;
     border:1px solid  #ccc;
     border-radius: 0px;
     &:nth-child(odd) {

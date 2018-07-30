@@ -6,7 +6,7 @@ var app = angular.module('pele.P1_appsListCtrl', ['ngStorage', 'ngCordova']);
 //==                         PAGE_1                                  ==//
 //=====================================================================//
 app.controller('P1_appsListCtrl',
-  function($ionicScrollDelegate, $scope, $http, $state, $ionicLoading, PelApi, ApiGateway, $rootScope, $ionicPopup, $ionicHistory, $sessionStorage, $localStorage, appSettings, srvShareData, $cordovaNetwork, $ionicNavBarDelegate) {
+  function($scope, $http, $state, $ionicLoading, PelApi, ApiGateway, $rootScope, $ionicPopup, $ionicHistory, $sessionStorage, $localStorage, appSettings, srvShareData, $cordovaNetwork, $ionicNavBarDelegate) {
     $ionicNavBarDelegate.showBackButton(true);
     $ionicHistory.clearHistory();
     PelApi.lagger.checkFile().then(function(logStat) {
@@ -16,7 +16,7 @@ app.controller('P1_appsListCtrl',
         })
       }
     })
-    $ionicScrollDelegate.$getByHandle('menu1-handle').scrollTo('300px');
+    //$ionicScrollDelegate.$getByHandle('menu1-handle').scrollTo('300px');
 
     $rootScope.menuItems = [];
     $scope.options = {
