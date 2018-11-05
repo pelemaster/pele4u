@@ -30,13 +30,13 @@ angular.module('pele')
         {state: "Ready prod",visible: false}, 
         {state: "Production",visible: false}];
       PelApi.showLoading();
-      $scope.states.forEach(state => {
+      $scope.states.forEach(function(state) {
         ApiGateway.get("cc/getpackage", {
             environment: $state.params.env,
             state: state.state
           }).success(function(pdata) {
-            packages = _.filter(pdata.PackageList, (e) => (e) && (e.Package != null));
-            state.packages = _.sortBy(packages, o => o.Package);
+            packages = _.filter(pdata.PackageList, function(e) { return (e) && (e.Package != null); });
+            state.packages = _.sortBy(packages, function(o) { return o.Package; });
             //console.log(JSON.stringify($scope.states));
           }).error(function(error, httpStatus, headers, config) {
             ApiGateway.throwError(httpStatus, "CC get Packages List", config);

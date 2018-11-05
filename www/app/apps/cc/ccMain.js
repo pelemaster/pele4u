@@ -8,7 +8,7 @@ angular.module('pele')
       }).success(function(data) {
         alert('ApiGateway returned');
         $scope.envList = data.EnvList;
-        $scope.envList = _.filter($scope.envList, (e) => e.Environment != null);
+        $scope.envList = _.filter($scope.envList, function(e) { return  e.Environment != null; });
       }).error(function(error, httpStatus, headers, config) {
         //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized getnext api", config);
         //PelApi.throwError("api", "get new Lead seq", "httpStatus : " + httpStatus + " " + JSON.stringify(error) + "(MS:" + config.ms + ")")
