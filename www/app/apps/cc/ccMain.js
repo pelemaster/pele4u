@@ -2,9 +2,11 @@ angular.module('pele')
   .controller('ccMainCtrl', ['StorageService', 'ApiGateway', '$scope', '$state', '$ionicModal', 'PelApi', '$ionicScrollDelegate', '$sce', '$ionicHistory',
   function(StorageService, ApiGateway, $scope, $state, $ionicModal, PelApi, $ionicScrollDelegate, $sce, $ionicHistory) {
       $scope.title = "CC - Main";
+      alert('In ccMain controller');
       PelApi.showLoading();
       ApiGateway.get("cc/getenv", {
       }).success(function(data) {
+        alert('ApiGateway returned');
         $scope.envList = data.EnvList;
         $scope.envList = _.filter($scope.envList, (e) => e.Environment != null);
       }).error(function(error, httpStatus, headers, config) {
