@@ -15,8 +15,8 @@ async function getPackages($http, p, e) {
 }*/
 
 angular.module('pele')
-  .controller('packageListCtrl', ['StorageService', 'ApiGateway', '$scope', '$state', '$ionicModal', 'PelApi', '$ionicScrollDelegate', '$sce', '$ionicHistory',
-  function(StorageService, ApiGateway, $scope, $state, $ionicModal, PelApi, $ionicScrollDelegate, $sce, $ionicHistory) {
+  .controller('packageListCtrl', ['ApiGateway', '$scope', '$state', 'PelApi', 
+  function(ApiGateway, $scope, $state, PelApi) {
       $scope.title = $state.params.env;
       $scope.envir = $state.params.env;
       $scope.states = [

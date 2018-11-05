@@ -470,7 +470,7 @@ angular.module('pele.states', [])
     },
     {
       state: 'app.cc.getenv',
-      url: '/ccApp',
+      url: '/ccApp/getenv',
       views: {
         'menuContent@app': {
           templateUrl: function() {

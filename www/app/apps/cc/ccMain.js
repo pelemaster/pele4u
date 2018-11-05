@@ -1,6 +1,6 @@
 angular.module('pele')
-  .controller('ccMainCtrl', ['StorageService', 'ApiGateway', '$scope', '$state', '$ionicModal', 'PelApi', '$ionicScrollDelegate', '$sce', '$ionicHistory',
-  function(StorageService, ApiGateway, $scope, $state, $ionicModal, PelApi, $ionicScrollDelegate, $sce, $ionicHistory) {
+  .controller('ccMainCtrl', ['ApiGateway', '$scope', '$state', 'PelApi',
+  function(ApiGateway, $scope, $state, PelApi) {
       $scope.title = "CC - Main";
       alert('In ccMain controller');
       PelApi.showLoading();

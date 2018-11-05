@@ -1,6 +1,6 @@
 angular.module('pele')
-  .controller('packagedetailsCtrl', ['StorageService', 'ApiGateway', '$scope', '$state', '$ionicModal', 'PelApi', '$ionicScrollDelegate', '$sce', '$ionicHistory',
-  function(StorageService, ApiGateway, $scope, $state, $ionicModal, PelApi, $ionicScrollDelegate, $sce, $ionicHistory) {
+  .controller('packagedetailsCtrl', ['ApiGateway', '$scope', '$state', 'PelApi',
+  function(ApiGateway, $scope, $state, PelApi) {
       $scope.title = "CC - Package details";
       $scope.package = $state.params.pkg;
       $scope.state = $state.params.stat;
