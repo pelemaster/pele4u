@@ -18,8 +18,7 @@
         <div class="list">
             <a ng-repeat="prog in progList | filter:progSearch" class="item">
                 <h2>{{prog.title}}</h2>
-                <p class="{color:green}">{{prog.from_up_processes}} / {{prog.to_up_processes}}</p>
-                <span class="badge" ng-class="{ progsInRange() ? 'badge-assertive' : 'badge-calm' }" >
+                <span class="badge" ng-class="progsInRange()">
                     {{prog.actual_processes}}
                 </span>
             </a>

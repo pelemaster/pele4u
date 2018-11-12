@@ -2,9 +2,12 @@ angular.module('pele')
   .controller('mafMainCtrl', ['ApiGateway', '$scope', 'PelApi', 
   function(ApiGateway, $scope, PelApi) {
       $scope.title = "MAF - Main";
-      
+
       $scope.progsInRange = function(prog) {
-        return (prog.actual_processes > prog.to_up_processes)||(prog.actual_processes < prog.from_up_processes);
+        if(prog.actual_processes > prog.to_up_processes)||(prog.actual_processes < prog.from_up_processes)
+          return "badge badge-assertive";
+        else 
+          return "badge badge-calm";
       }
 
       PelApi.showLoading();
