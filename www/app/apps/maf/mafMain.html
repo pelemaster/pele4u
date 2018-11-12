@@ -1,0 +1,37 @@
+<ion-view cache-view="true">
+    <ion-nav-buttons side="right">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        <div class="bar bar-header bar-positive">
+            <div class="title">{{title}}
+            </div>
+        </div>
+    </ion-nav-title>
+    <ion-content scroll="true" padding="true" id="maf-main">
+
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="program" ng-model="progSearch">
+                </label>
+            </div>
+        <div class="list">
+            <a ng-repeat="prog in progList | filter:progSearch" class="item">
+                {{prog.title}}<span class="badge badge-assertive">{{prog.actual_processes}}</span>
+            </a>
+        </div>
+        <div class="list">
+            <a ng-repeat="serv in backLog" class="item">
+                    <div class="card">
+                            <div class="item item-text-wrap">
+                                {{backLog.SERVICE}} : 
+                                {{backLog.FILE_STATUS}}
+                                <span class="badge badge-assertive">{{backlog.CNT}}</span>
+                            </div>
+                    </div>
+                <h2>{{backLog.title}}</h2>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
+    
