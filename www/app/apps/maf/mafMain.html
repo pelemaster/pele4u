@@ -17,19 +17,11 @@
             </div>
         <div class="list">
             <a ng-repeat="prog in progList | filter:progSearch" class="item">
-                {{prog.title}}
-                <span class="badge badge-assertive" 
-                ng-show="(prog.actual_processes>prog.to_up_processes)||(prog.actual_processes<prog.from_up_processes)">
+                <h2>{{prog.title}}</h2>
+                <p class="{color:green}">{{prog.from_up_processes}} / {{prog.to_up_processes}}</p>
+                <span class="badge" ng-class="{ progsInRange() ? 'badge-assertive' : 'badge-calm' }" >
                     {{prog.actual_processes}}
                 </span>
-                <span class="badge badge-calm" 
-                ng-show="!((prog.actual_processes>prog.to_up_processes)||(prog.actual_processes<prog.from_up_processes))">
-                    {{prog.actual_processes}}
-                </span>
-                /
-                <span class="badge badge-calm">{{prog.from_up_processes}}-{{prog.to_up_processes}}</span>
-                
-                <span class="badge badge-assertive">{{prog.actual_processes}}</span>
             </a>
         </div>
         <div class="list">
