@@ -17,16 +17,31 @@
             </div>
         <div class="list">
             <a ng-repeat="prog in progList | filter:progSearch" class="item">
-                {{prog.title}}<span class="badge badge-assertive">{{prog.actual_processes}}</span>
+                {{prog.title}}
+                <span class="badge badge-assertive" 
+                ng-show="(prog.actual_processes>prog.to_up_processes)||(prog.actual_processes<prog.from_up_processes)">
+                    {{prog.actual_processes}}
+                </span>
+                <span class="badge badge-calm" 
+                ng-show="!((prog.actual_processes>prog.to_up_processes)||(prog.actual_processes<prog.from_up_processes))">
+                    {{prog.actual_processes}}
+                </span>
+                /
+                <span class="badge badge-calm">{{prog.from_up_processes}}-{{prog.to_up_processes}}</span>
+                
+                <span class="badge badge-assertive">{{prog.actual_processes}}</span>
             </a>
         </div>
         <div class="list">
             <a ng-repeat="serv in backLog" class="item">
                     <div class="card">
                             <div class="item item-text-wrap">
-                                {{backLog.SERVICE}} : 
-                                {{backLog.FILE_STATUS}}
-                                <span class="badge badge-assertive">{{backlog.CNT}}</span>
+                                {{serv.SERVICE}} : 
+                                {{serv.FILE_STATUS}}
+                                <span class="badge badge-calm" ng-show="serv.FILE_STATUS=='CO'">{{serv.CNT}}</span>
+                                <span class="badge badge-energized" ng-show="serv.FILE_STATUS=='IU'">{{serv.CNT}}</span>
+                                <span class="badge badge-positive" ng-show="serv.FILE_STATUS=='RD'">{{serv.CNT}}</span>
+                                <span class="badge badge-assertive" ng-show="serv.FILE_STATUS=='AF'">{{serv.CNT}}</span>
                             </div>
                     </div>
                 <h2>{{backLog.title}}</h2>
