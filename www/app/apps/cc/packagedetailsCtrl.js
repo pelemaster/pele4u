@@ -12,23 +12,18 @@ angular.module('pele')
             state:$state.params.stat,
             package:$state.params.pkg,
         }).success(function(data) {
-        
+        console.log('Data from EAI:');
+        console.log(data);
         //let retpath='#/app/ccApp/packagelist/' + state.params.env + "/" + new Date().getTime();
         //window.location.href = retpath;
-          
+          /*
           $state.go("app.cc.packagelist", {
               env: $state.params.env,
-	      timestamp: new Date().getTime()
+	            timestamp: new Date().getTime()
             }, {
               reload: true
           })
-          /*
-         $state.transitionTo("app.cc.main", {env: $state.params.env}, {
-           reload: true,
-           inherit: false,
-           notify:true
-         })
-         */
+          */
         }).error(function(error, httpStatus, headers, config) {
           //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized getnext api", config);
           //PelApi.throwError("api", "get new Lead seq", "httpStatus : " + httpStatus + " " + JSON.stringify(error) + "(MS:" + config.ms + ")")

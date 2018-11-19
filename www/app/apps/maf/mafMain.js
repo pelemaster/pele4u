@@ -4,7 +4,8 @@ angular.module('pele')
       $scope.title = "MAF - Main";
 
       $scope.progsInRange = function(prog) {
-        if((prog.actual_processes > prog.to_up_processes)||(prog.actual_processes < prog.from_up_processes))
+        if((Number(prog.actual_processes) > Number(prog.to_up_processes))||
+          (Number(prog.actual_processes) < Number(prog.from_up_processes))) 
           return "badge badge-assertive";
         else 
           return "badge badge-calm";
