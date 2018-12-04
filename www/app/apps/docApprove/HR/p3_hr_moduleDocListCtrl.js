@@ -135,7 +135,11 @@ angular.module('pele')
       if (data.Response.OutParams.Result === undefined) {
         data.Response.OutParams.Result = {};
       } else {
-        newData = JSON.parse(data.Response.OutParams.Result);
+        try {
+          newData = JSON.parse(data.Response.OutParams.Result);
+        } catch (e) {
+          PelApi.throwError("api", "hrDocListCtr", "Failed to parse  JSON  string on HR docs List", false)
+        }
         myJSON = newData.JSON[0];
 
         if (myJSON.DOC_LINES.length === undefined) {

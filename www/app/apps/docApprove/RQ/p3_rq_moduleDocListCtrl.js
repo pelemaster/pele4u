@@ -187,7 +187,11 @@ angular.module('pele')
       if (data.Response.OutParams.Result === undefined) {
         data.Response.OutParams.Result = {};
       } else {
-        newData = JSON.parse(data.Response.OutParams.Result);
+        try {
+          newData = JSON.parse(data.Response.OutParams.Result);
+        } catch (e) {
+          PelApi.throwError("api", "rqDocListCtr", "Failed to parse  JSON  string on RQ docs List", false)
+        }
         myJSON = newData.JSON[0];
         newData = myJSON;
         data.Response.OutParams.Result = newData;

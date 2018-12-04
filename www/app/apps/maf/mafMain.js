@@ -3,6 +3,22 @@ angular.module('pele')
   function(ApiGateway, $scope, PelApi) {
       $scope.title = "MAF - Main";
 
+      $scope.lager_e = function() {
+        PelApi.lagger.error("PelApi.lagger.error invoked")
+      }
+
+      $scope.throw_e_0 = function() {
+        PelApi.throwError("api", 
+        "mafMainCtrl", 
+        "PelApi.throwError redirect false", false)
+      }
+
+      $scope.throw_e_1 = function() {
+        PelApi.throwError("api", 
+        "mafMainCtrl", 
+        "PelApi.throwError redirect true", true)
+      }
+
       $scope.progsInRange = function(prog) {
         if((Number(prog.actual_processes) > Number(prog.to_up_processes))||
           (Number(prog.actual_processes) < Number(prog.from_up_processes))) 

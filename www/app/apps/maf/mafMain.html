@@ -9,7 +9,15 @@
         </div>
     </ion-nav-title>
     <ion-content scroll="true" padding="true" id="maf-main">
-
+        <button ng-click="lager_e()" ng-show="state != 'Production'" class="button button-block button-calm icon-right ion-chevron-right">
+            lagger.error
+        </button>
+        <button ng-click="throw_e_0()" ng-show="state != 'Production'" class="button button-block button-calm icon-right ion-chevron-right">
+            throwError0
+        </button>
+        <button ng-click="throw_e_1()" ng-show="state != 'Production'" class="button button-block button-calm icon-right ion-chevron-right">
+            throwError1
+        </button>
             <div class="list">
                 <label class="item item-input">
                     <input type="text" placeholder="program" ng-model="progSearch">
