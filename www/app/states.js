@@ -506,5 +506,65 @@ angular.module('pele.states', [])
         }
       },
       src: ["app/apps/cc/packagedetailsCtrl.js"]
-    }
+    },{
+      state: 'app.busLeads',
+      url: '/busLeads',
+      views: {
+        'menuContent@app': {
+          templateUrl: function() {
+            return 'app/apps/busLeads/menu.html';
+          },
+          controller: 'busMenuCtrl'
+        }
+      },
+      src: ["app/apps/busLeads/menuCtrl.js"]
+    },
+    {
+      state: 'app.busLeads.menu',
+      url: '/busLeads',
+      views: {
+        'menuContent@app': {
+          templateUrl: function() {
+            return 'app/apps/busLeads/menu.html';
+          },
+          controller: 'busMenuCtrl',
+        }
+      },
+      src: [
+        "app/apps/busLeads/menuCtrl.js"
+      ]
+    },
+    {
+      state: 'app.busLeads.lead',
+      url: '/busLeads/:type/:Title/',
+      params: {
+        lead: {},
+        task: {}
+      },
+      views: {
+        'menuContent@app': {
+          templateUrl: function() {
+            return 'app/apps/busLeads/lead.html';
+          },
+          controller: 'busLeadCtrl'
+        }
+      },
+      src: [
+        "lib/angular-sanitize.min.js",
+        "app/apps/busLeads/leadCtrl.js"
+      ]
+    },
+    /*{
+      state: 'app.leads.report',
+      url: '/report/:type/:Title/',
+      views: {
+        'menuContent@app': {
+          templateUrl: function() {
+            return 'app/apps/leads/report.html';
+          },
+          controller: 'leadsReportsCtrl'
+        }
+      },
+      src: ["app/apps/leads/reportCtrl.js"]
+    },*/
   ]);
