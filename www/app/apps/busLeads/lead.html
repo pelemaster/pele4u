@@ -33,7 +33,7 @@
               </label>
         <label class="item no-border item-input">
           <span class="input-label">* כמות מנויים</span>
-              <select ng-model="lead.SUBSCRIBERS" ng-options="subs.range for subs in subRange">
+              <select ng-model="lead.SUBSCRIBERS" ng-options="subs for subs in subRange">
                 <option value="">* בחר כמות מנויים</option>
               </select>
             </label>
@@ -56,7 +56,7 @@
 
         <label class="item no-border item-input">
         <span class="input-label">* תפקיד איש קשר</span>
-            <select ng-model="lead.CONTACT_TITLE" ng-options="contact.title for contact in contacts">
+            <select ng-model="lead.CONTACT_TITLE" ng-options="contact for contact in contacts">
               <option value="">* בחר תפקיד</option>
             </select>
           </label>

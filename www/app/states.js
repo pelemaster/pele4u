@@ -554,17 +554,17 @@ angular.module('pele.states', [])
         "app/apps/busLeads/leadCtrl.js"
       ]
     },
-    /*{
-      state: 'app.leads.report',
+    {
+      state: 'app.busLeads.report',
       url: '/report/:type/:Title/',
       views: {
         'menuContent@app': {
           templateUrl: function() {
-            return 'app/apps/leads/report.html';
+            return 'app/apps/busLeads/report.html';
           },
           controller: 'leadsReportsCtrl'
         }
       },
-      src: ["app/apps/leads/reportCtrl.js"]
-    },*/
+      src: ["app/apps/busLeads/reportCtrl.js"]
+    },
   ]);

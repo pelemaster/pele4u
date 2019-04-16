@@ -8,15 +8,15 @@ angular.module('pele', ['ngSanitize'])
   .controller('busLeadCtrl', ['StorageService', 'ApiGateway', '$scope', '$state', '$ionicModal', 'PelApi', '$ionicScrollDelegate', '$sce', 'appSettings',
     function(StorageService, ApiGateway, $scope, $state, $ionicModal, PelApi, $ionicScrollDelegate, $sce, appSettings) {
       $scope.view = "";
-      $scope.subRange = [{range:"בחר", val: 0},{range:"10-50", val: 1},{range: "50 מעל", val:2}]
+      $scope.subRange = ["10-50","50 מעל"]
       $scope.noOfSubscribers = $scope.subRange[0]
 
-      $scope.contacts = [{title:"בחר", val: 0},
-      {title:"בעלים", val: 1},
-      {title:  'מנכ"ל', val: 2},
-      {title:  'סמנכ"ל', val: 3},
-      {title:  'בכיר בארגון', val: 4},
-      {title:  'אחר', val: 5}]
+      $scope.contacts = [
+      'בעלים',
+        'מנכ"ל',
+        'סמנכ"ל', 
+        'בכיר בארגון',
+        'אחר']
       $scope.contactTitle = $scope.contacts[0]
 
       $scope.forms = {}
@@ -136,7 +136,23 @@ angular.module('pele', ['ngSanitize'])
 
       $scope.submit = function() {
         $scope.submitted = true;
+        $scope.lead.resource_value = $scope.subRange.indexOf($scope.lead.SUBSCRIBERS) + 121
         console.log($scope.lead)
+
+        $scope.disablePost = true;
+        PelApi.showLoading();
+        ApiGateway.post('businessLeads/create_task', $scope.lead)
+        .success(function(data) {
+           console.log('create_task::Success')
+          
+        }).error(function(error, httpStatus, headers, config) {
+          //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized getnext api", config);
+          //PelApi.throwError("api", "get new Lead seq", "httpStatus : " + httpStatus + " " + JSON.stringify(error) + "(MS:" + config.ms + ")")
+          ApiGateway.throwError(httpStatus, eaipath, config);
+        }).finally(function() {
+          PelApi.hideLoading();
+        });
+
         return
         if ($scope.forms.leadForm.$invalid || !$scope.lead.LEAD_TYPE) {
           return false;
