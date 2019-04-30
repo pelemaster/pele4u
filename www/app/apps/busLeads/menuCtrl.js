@@ -68,7 +68,8 @@ angular.module('pele')
       };
 
       $scope.$on('$destroy', function() {
-        $scope.modal.remove();
+        if($scope.modal)
+          $scope.modal.remove();
       });
     }
 

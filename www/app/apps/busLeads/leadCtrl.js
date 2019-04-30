@@ -136,78 +136,32 @@ angular.module('pele', ['ngSanitize'])
 
       $scope.submit = function() {
         $scope.submitted = true;
+        //console.log($scope.lead)
+
+        if ($scope.forms.leadForm.$invalid) {
+          return false;
+        }
+        
         $scope.lead.resource_value = $scope.subRange.indexOf($scope.lead.SUBSCRIBERS) + 121
-        console.log($scope.lead)
 
         $scope.disablePost = true;
         PelApi.showLoading();
         ApiGateway.post('businessLeads/create_task', $scope.lead)
         .success(function(data) {
            console.log('create_task::Success')
-          
         }).error(function(error, httpStatus, headers, config) {
           //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized getnext api", config);
           //PelApi.throwError("api", "get new Lead seq", "httpStatus : " + httpStatus + " " + JSON.stringify(error) + "(MS:" + config.ms + ")")
           ApiGateway.throwError(httpStatus, eaipath, config);
         }).finally(function() {
-          PelApi.hideLoading();
+          //PelApi.hideLoading();
+          $scope.successMessage = '<h2 color="green">ליד עסקי נוצר בהצלחה</h2><br><br>'
+          $scope.leadSuccess = true
         });
+      }
 
-        return
-        if ($scope.forms.leadForm.$invalid || !$scope.lead.LEAD_TYPE) {
-          return false;
-        }
-
-        var leadConf = _.get($scope.typesByFormType, $scope.lead.LEAD_TYPE);
-        if (!leadConf)
-          PelApi.throwError("app", "Failed to fetch lead Config ,leadType:" + $scope.lead.LEAD_TYPE, "");
-
-
-        $scope.lead.TASK_LEVEL = leadConf.TASK_LEVEL;
-        $scope.lead.TASK_FOLLOWUP_TYPE = leadConf.TASK_FOLLOWUP_TYPE;
-        $scope.lead.RESOURCE_TYPE = leadConf.RESOURCE_TYPE;
-        $scope.lead.RESOURCE_VALUE = leadConf.RESOURCE_VALUE;
-
-        $scope.lead.PREFERRED_HOURS = ($scope.lead.from_hour || "") + " - " + ($scope.lead.to_hour || "");
-
-        //        $scope.lead.ATTRIBUTES['customer_id'] = $scope.lead.CUSTOMER_ID;
-        //        $scope.lead.ATTRIBUTES['phone_no_2'] = $scope.lead.PHONE_NO_2;
-
-        if ($scope.uploadRequired && !$scope.files.length) {
-          swal({
-            type: 'error',
-            title: '',
-            text: 'נא צרפו מסמכים כנדרש',
-            confirmButtonText: 'אשור',
-          })
-          return false;
-        }
-        $scope.disablePost = true;
-        PelApi.showLoading();
-        ApiGateway.post("leads", $scope.lead, {
-          timeout: 20000,
-          retry: 0
-        }).success(function(data) {
-          $scope.leadSuccess = true;
-          if ($state.params.lead && $state.params.lead.LEAD_ID)
-            $scope.successMessage = "הליד נשמר בהצלחה";
-          else
-            $scope.successMessage = $scope.trust(leadConf.SUCCESS_MESSAGE);
-          $scope.lead = {};
-          $ionicScrollDelegate.$getByHandle('mainContent').scrollTop(true);
-        }).error(function(error, httpStatus, headers, config) {
-          PelApi.safeApply($scope, function() {
-            $scope.disablePost = false;
-          });
-          //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized post lead  lead api", config);
-          //PelApi.throwError("api", "Post new lead", "httpStatus : " + httpStatus + " " + JSON.stringify(error) + "(MS:" + config.ms + ")")
-          ApiGateway.throwError(httpStatus, "Post new lead", config);
-        }).finally(function() {
-          PelApi.safeApply($scope, function() {
-            $scope.disablePost = false;
-          });
-          PelApi.hideLoading();
-        })
+      $scope.goToMenu = function() {
+        $state.go('app.busLeads')
       }
 
       $scope.uploadFile = function() {

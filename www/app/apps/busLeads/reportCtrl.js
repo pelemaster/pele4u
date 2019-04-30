@@ -61,13 +61,8 @@ angular.module('pele')
         'נסגר טיפול': 'string-badge pel-badge  light-blue',
       }
 
-      if ($state.params.type === "S") {
-        $scope.title = "לידים שפתחתי";
-        $scope.prevState = "app.leads.self"
-      } else {
-        $scope.title = "לידים שלי לשגרירים";
-        $scope.prevState = "app.leads.task"
-      }
+        $scope.title = "לידים עסקיים שפתחתי";
+        $scope.prevState = "app.busLeads.lead";
 
       $scope.getConf = function() {
         $scope.conf = StorageService.getData("leads_conf")
@@ -102,6 +97,7 @@ angular.module('pele')
           type: $state.params.type
         }).success(function(data) {
           $scope.leads = data;
+          console.log($scope.leads)
           $scope.createGroups();
         }).error(function(error, httpStatus, headers, config) {
           //ApiGateway.reauthOnForbidden(httpStatus, "Unauthorized get leads/tasks  api", config);
