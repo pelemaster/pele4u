@@ -139,6 +139,8 @@ angular.module('pele', ['ngSanitize'])
         //console.log($scope.lead)
 
         if ($scope.forms.leadForm.$invalid || !$scope.lead.REGULATIONS) {
+          if(!$scope.lead.REGULATIONS)
+          $ionicScrollDelegate.scrollBottom()
           return false;
         }
         
