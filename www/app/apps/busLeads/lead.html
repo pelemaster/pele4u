@@ -5,7 +5,14 @@
       </div>
     </div>
   </ion-nav-title>
-  <ion-content scroll="true" style="height: calc(100% - 100px);" id="new_lead" padding="true" delegate-handle="mainContent">
+  <ion-content 
+    scroll="true" 
+    style="height: calc(100% - 100px);" 
+    id="new_lead" 
+    padding="true" 
+    delegate-handle="mainContent"
+    has-footer="true"
+    >
     <div ng-show="leadSuccess" class="lead-success text-center">
       <img src="img/new_icons/vi.png">
       <div ng-bind-html="successMessage"></div>
