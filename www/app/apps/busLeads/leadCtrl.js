@@ -136,7 +136,7 @@ angular.module('pele', ['ngSanitize'])
 
       $scope.submit = function() {
         $scope.submitted = true;
-        //console.log($scope.lead)
+        //console.log($scope.forms.leadForm);
 
         if ($scope.forms.leadForm.$invalid || !$scope.lead.REGULATIONS) {
           if(!$scope.lead.REGULATIONS)

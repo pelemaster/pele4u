@@ -26,7 +26,7 @@
               <input type="tel" name="EMPLOYEE_ID" ng-model="lead.EMPLOYEE_ID" disabled>
             </label>
         <label class="item no-border item-input">
-              <span class="input-label">* שם פרטי לקוח</span>
+              <span class="input-label">* שם פרטי - לקוח </span>
               <input type="text" name="FIRST_NAME"  ng-model="lead.FIRST_NAME" required 
               ng-pattern=/^[\wא-ת]+$/
               autocomplete="off">
@@ -39,7 +39,7 @@
         </label>
 
         <label class="item no-border item-input">
-                <span class="input-label">* שם משפחה לקוח</span>
+                <span class="input-label">* שם משפחה - לקוח </span>
                 <input type="text"  name="LAST_NAME"  ng-model="lead.LAST_NAME" required
                 ng-pattern=/^[\wא-ת]+$/
                 autocomplete="off">
@@ -52,10 +52,13 @@
           </label>
         <label class="item no-border item-input">
           <span class="input-label">* כמות מנויים</span>
-              <select ng-model="lead.SUBSCRIBERS" ng-options="subs for subs in subRange">
+              <select ng-model="lead.SUBSCRIBERS" ng-options="subs for subs in subRange" required>
                 <option value="">* בחר כמות מנויים</option>
               </select>
             </label>
+            <label ng-show="!lead.SUBSCRIBERS &&  submitted" class="item no-border input-error">
+              יש לבחור כמות מנויים
+           </label>
 
         <label class="item no-border item-input item-text-wrap">
                 <span class="input-label">* מספר טלפון לחזרה</span>
@@ -77,10 +80,13 @@
 
         <label class="item no-border item-input">
         <span class="input-label">* תפקיד איש קשר</span>
-            <select ng-model="lead.CONTACT_TITLE" ng-options="contact for contact in contacts">
+            <select ng-model="lead.CONTACT_TITLE" ng-options="contact for contact in contacts" required>
               <option value="">* בחר תפקיד</option>
             </select>
           </label>
+          <label ng-show="!lead.CONTACT_TITLE &&  submitted" class="item no-border input-error">
+            יש לבחור תפקיד איש קשר
+         </label>
         <label class="item no-border item-input">
             <span class="input-label">* עיר הלקוח</span>
             <input type="text"  name="CITY"  ng-model="lead.CITY" 
