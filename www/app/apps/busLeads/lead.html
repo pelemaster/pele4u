@@ -70,7 +70,7 @@
 
         <label class="item no-border item-input item-text-wrap">
                 <span class="input-label">* מספר טלפון נוסף לחזרה</span>
-                <input type="tel"  name="PHONE_NO_2"  ng-model="lead.PHONE_NO_2" required ng-pattern="/^05\d-?[0-9]{1}-?[0-9]{2}-?[0-9]{4}$/" autocomplete="off">
+                <input type="tel"  name="PHONE_NO_2"  ng-model="lead.PHONE_NO_2" ng-pattern="/^05\d-?[0-9]{1}-?[0-9]{2}-?[0-9]{4}$/" autocomplete="off">
             </label>
         <label ng-show="forms.leadForm.PHONE_NO_2.$invalid &&  
         (forms.leadForm.PHONE_NO_2.$touched  || forms.leadForm.PHONE_NO_2.$dirty  || submitted)" 
